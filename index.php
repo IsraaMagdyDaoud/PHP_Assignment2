@@ -11,11 +11,13 @@
         <h1>Day2</h1>
         <?php
         // Search for how to make \n work in browser.
-         echo nl2br("Hello, World!\nThis is a new line.\nThis is a new line.\n");
+        echo nl2br("One line.\nAnother line.");
         //  Display $_SERVER in readable format.
-         foreach ($_SERVER as $key => $value) {
-            echo nl2br($key . ' => ' . $value . "\n");
+        echo '<pre>';
+        foreach ($_SERVER as $key => $value) {
+            echo "[$key] => $value\n";
         }
+        echo '</pre>';
         // Try any three functions from String or Arrays built in.
         echo strripos("I love php, I love php too!","PHP");
         echo strtoupper("<br>Hello WORLD!");
@@ -24,7 +26,11 @@
         echo join(" ",$arr);
         echo "<br>";
         // Task4
-        $array = [12, 45, 10, 25];
+        // $array=[12, 45, 10, 25];
+        $array[1] = 45;
+        $array[0] = 12;
+        $array[3] = 25;
+        $array[2] = 10;
         $sum = array_sum($array);
         $avg = $sum / count($array);
         rsort($array);
